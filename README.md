@@ -21,7 +21,11 @@ Notes about the implementations:
 3. Two use code examples are provided:
   a. main_tester.py - Can be run on GPU, or through multi-CPU processing (this feature is not fully tested).
   b. main_tester_MPI.py - Can be run with MPI, but this is not fully tested.
-4. Using the Python implementation of mapVBVD, data_io folder provides some simple scripts to read Siemens TWIX data files. However, the rsulting images do    not contain the proper header.
+4. Using the Python implementation of mapVBVD, data_io folder provides some simple scripts to read Siemens TWIX data files. However, the rsulting images do not contain the proper header.
+5. GRAPPA recosntruction code supports multi-coil (multi-channel) 3D acquisitions (2D multi-slice acquisitions should also be supported, but this has not been tested yet). Data format should follow (4D tensor):
+           # Columns (Freq. encode), # Channels (Coils), # PE Lines, # Partitions. 
+   This should be automatically fullfiled if you read from a TWIX .dat file.
+   GRAPPA kernels are 2D, but processing is batch performed for all frequency encode columns. 
 
 Requirements:
 -------------
