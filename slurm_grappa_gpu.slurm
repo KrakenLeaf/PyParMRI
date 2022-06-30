@@ -13,12 +13,10 @@
 
 source activate DBSV10
 
-twix_file=/home/naxos2-raid18/orens/DBS_Twix_Data/PD122/meas_MID00225_FID08079_t1_mpr_tra_06iso_ipat3.dat
-savefolder=/home/naxos2-raid18/orens/DBS_for_orens/Projects/PI/Recon5
+twix_file=Path to TWIX file.dat
+savefolder=name of save folder
 kernel_size="5 5"
 lam=0.01
-
-cd /home/naxos2-raid18/orens/DBS_for_orens/Projects/PI/pyParMRI
 
 # SLURM parameters
 echo "SLURM_JOBID="$SLURM_JOBID
